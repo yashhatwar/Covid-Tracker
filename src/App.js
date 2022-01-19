@@ -6,7 +6,6 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Columns from "react-columns";
 import Form from 'react-bootstrap/Form';
 
-
 function App() {
 
   const [latest, setLatest] = useState([]);
@@ -51,7 +50,7 @@ function App() {
         <Card bg="primary" text="white" className='text-center' style={{ margin: "10px" }}>
 
           <Card.Body>
-            <Card.Title>Cases:</Card.Title>
+            <Card.Title>Today's Worldwide Cases:</Card.Title>
             <Card.Text>
               {latest.todayCases}
             </Card.Text>
@@ -63,7 +62,7 @@ function App() {
         <Card bg="danger" text="white" className='text-center' style={{ margin: "10px" }}>
 
           <Card.Body>
-            <Card.Title>Deaths:</Card.Title>
+            <Card.Title>Today's Worldwide Deaths:</Card.Title>
             <Card.Text>
               {latest.todayDeaths}
             </Card.Text>
@@ -75,7 +74,7 @@ function App() {
         <Card bg="success" text="white" className='text-center' style={{ margin: "10px" }}>
 
           <Card.Body>
-            <Card.Title>Recovered:</Card.Title>
+            <Card.Title> Today's Worldwide Recovered:</Card.Title>
             <Card.Text>
               {latest.todayRecovered}
             </Card.Text>
@@ -108,14 +107,15 @@ function App() {
             <Card.Img variant="top" src={data.countryInfo.flag} />
             <Card.Body>
               <Card.Title>{data.country}</Card.Title>
-              <Card.Text>Cases {data.cases}</Card.Text>
-              <Card.Text>Deaths {data.deaths}</Card.Text>
-              <Card.Text>Recovered {data.recovered}</Card.Text>
-              <Card.Text>Today's Cases {data.todayCases}</Card.Text>
-              <Card.Text>Today's Deaths {data.todayDeaths}</Card.Text>
-              <Card.Text>Today's Recovered {data.todayRecovered}</Card.Text>
-              <Card.Text>Active {data.active}</Card.Text>
-              <Card.Text>Critical {data.critical}</Card.Text>
+              <Card.Text>Today's Cases: {data.todayCases}</Card.Text>
+              <Card.Text>Today's Deaths: {data.todayDeaths}</Card.Text>
+              <Card.Text>Today's Recovered: {data.todayRecovered}</Card.Text>
+              <Card.Text>Active: {data.active}</Card.Text>
+              <Card.Text>Critical: {data.critical}</Card.Text>
+              <Card.Text>Cases till date: {data.cases}</Card.Text>
+              <Card.Text>Deaths till date: {data.deaths}</Card.Text>
+              <Card.Text>Recovered till date: {data.recovered}</Card.Text>
+              
             </Card.Body>
           </Card>
         ))
@@ -123,7 +123,8 @@ function App() {
 </Columns>
 </div>
 
-  )
-}
+  );
+};
 
+  
 export default App;
