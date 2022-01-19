@@ -5,6 +5,7 @@ import axios from "axios";
 import CardGroup from 'react-bootstrap/CardGroup';
 import Columns from "react-columns";
 import Form from 'react-bootstrap/Form';
+import NumberFormat from 'react-number-format';
 
 function App() {
 
@@ -51,9 +52,9 @@ function App() {
 
           <Card.Body>
             <Card.Title>Today's Worldwide Cases:</Card.Title>
-            <Card.Text>
-              {latest.todayCases}
-            </Card.Text>
+       
+          <NumberFormat value={latest.todayCases} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" />
+       
           </Card.Body>
           <Card.Footer>
             <small>Last updated {lastUpdated}</small>
@@ -63,9 +64,8 @@ function App() {
 
           <Card.Body>
             <Card.Title>Today's Worldwide Deaths:</Card.Title>
-            <Card.Text>
-              {latest.todayDeaths}
-            </Card.Text>
+            
+            <NumberFormat value={latest.todayDeaths} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" />
           </Card.Body>
           <Card.Footer>
             <small >Last updated  {lastUpdated}</small>
@@ -75,9 +75,7 @@ function App() {
 
           <Card.Body>
             <Card.Title> Today's Worldwide Recovered:</Card.Title>
-            <Card.Text>
-              {latest.todayRecovered}
-            </Card.Text>
+            <NumberFormat value={latest.todayRecovered} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" />
           </Card.Body>
           <Card.Footer>
             <small >Last updated  {lastUpdated}</small>
@@ -107,14 +105,15 @@ function App() {
             <Card.Img variant="top" src={data.countryInfo.flag} />
             <Card.Body>
               <Card.Title>{data.country}</Card.Title>
-              <Card.Text>Today's Cases: {data.todayCases}</Card.Text>
-              <Card.Text>Today's Deaths: {data.todayDeaths}</Card.Text>
-              <Card.Text>Today's Recovered: {data.todayRecovered}</Card.Text>
-              <Card.Text>Active: {data.active}</Card.Text>
-              <Card.Text>Critical: {data.critical}</Card.Text>
-              <Card.Text>Cases till date: {data.cases}</Card.Text>
-              <Card.Text>Deaths till date: {data.deaths}</Card.Text>
-              <Card.Text>Recovered till date: {data.recovered}</Card.Text>
+              <Card.Text>Today's Cases: <NumberFormat value={data.todayCases} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /> </Card.Text>
+              
+              <Card.Text>Today's Deaths: <NumberFormat value={data.todayDeaths} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /> </Card.Text>
+              <Card.Text>Today's Recovered: <NumberFormat value={data.todayRecovered} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /> </Card.Text>
+              <Card.Text>Active: <NumberFormat value={data.active} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /></Card.Text>
+              <Card.Text>Critical: <NumberFormat value={data.critical} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /></Card.Text>
+              <Card.Text>Cases till date: <NumberFormat value={data.cases} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /></Card.Text>
+              <Card.Text>Deaths till date: <NumberFormat value={data.deaths} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /></Card.Text>
+              <Card.Text>Recovered till date: <NumberFormat value={data.recovered} displayType={'text'} thousandSeparator={true} thousandsGroupStyle="lakh" /></Card.Text>
               
             </Card.Body>
           </Card>
