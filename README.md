@@ -1,4 +1,4 @@
-Deployed Site URL: https://61e86fb6930d400007a42e20--festive-brown-a0a0b7.netlify.app/
+ URL: https://worldcovidstatstracker.netlify.app/
 
 
 
