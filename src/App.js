@@ -33,7 +33,7 @@ function App() {
     return searchCountries !== ""?item.country.includes(searchCountries):item;
 
   })
-  {
+  
     var queries = [{
       columns: 2,
       query: 'min-width: 500px'
@@ -41,7 +41,7 @@ function App() {
       columns: 3,
       query: 'min-width: 1000px'
     }];
-  }
+
   return (
     <div>
       <br/>
